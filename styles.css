@@ -1,0 +1,294 @@
+/* Tipografía y transición general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header,
+footer {
+    transition: background-color 0.3s ease;
+}
+
+/* Enlaces del menú */
+.enlace {
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: white;
+}
+
+.enlace:hover {
+    color: #ffc107;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+/* Tarjetas de producto */
+.producto {
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 0.6s ease forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.producto:hover {
+    transform: rotateY(5deg) scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ffc107;
+}
+
+/* Imagen dentro de la tarjeta */
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.dark-mode .nav-link {
+    color: #ffc107;
+}
+
+.dark-mode .texto-destacado {
+    color: #f0f0f0;
+}
+
+.dark-mode .reseñas {
+    color: #ccc;
+}
+
+.dark-mode .reseñas h6 {
+    color: #eee;
+}
+
+.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.dark-mode .modal-header,
+.dark-mode .modal-footer {
+    border-color: #444;
+}
+
+.dark-mode .btn-close {
+    filter: invert(1);
+}
+
+/* Botón de compra simulado */
+.comprado {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+/* Carrito */
+.carrito {
+    font-size: 1.2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .carrito {
+    color: #f0f0f0;
+}
+
+/* Animación al agregar al carrito */
+.animar-carrito {
+    animation: saltar 0.5s ease;
+}
+
+@keyframes saltar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Reseñas */
+.reseñas {
+    font-size: 0.9rem;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.reseñas h6 {
+    font-size: 1rem;
+    color: #222;
+    transition: color 0.3s ease;
+}
+
+/* Texto destacado */
+.texto-destacado {
+    color: #222;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Hero */
+.hero-cancha img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.hero-cancha img:hover {
+    transform: scale(1.02);
+}
+
+.hero-cancha h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.dark-mode .hero-cancha h2,
+.dark-mode .hero-cancha p {
+    color: #f0f0f0;
+}
+
+/* Filtro por estilo */
+#filtro-estilo {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode #filtro-estilo {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #444;
+}
+
+/* Botón ver carrito en modo oscuro */
+.dark-mode [data-bs-target="#modalCarrito"] {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+    .acciones-header {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .acciones-header button {
+        width: 100%;
+    }
+
+    .carrito {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-link {
+        text-align: center;
+    }
+
+    .hero-cancha img {
+        max-height: 200px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .texto-destacado {
+        font-size: 1rem;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    .producto {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar-brand {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .carrito {
+        justify-content: center;
+    }
+
+    .navbar-nav .btn {
+        width: 100%;
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1000;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 58px;
+    height: 58px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
